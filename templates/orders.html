@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Список квартир{% endblock %}
+
+{% block content %}
+<ul>
+    {% for order in data.hotels %}
+       {% include 'order_element.html' with element=order %}
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
+

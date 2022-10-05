@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Гости {% endblock %}
+
+{% block content %}
+<ul>
+    {% for guest in data.guests %}
+       {% include 'guest_element.html' with element=guest %}
+    {% empty %}
+        <li>Список пуст</li>
+    {% endfor %}
+</ul>
+{% endblock %}
