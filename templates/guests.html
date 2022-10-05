@@ -5,8 +5,8 @@
 
 {% block content %}
 <ul>
-    {% for guest in data.guests %}
-       {% include 'guest_element.html' with element=guest %}
+    {% for car in data.cars %}
+       {% include 'cars_element.html' with element=car %}
     {% empty %}
         <li>Список пуст</li>
     {% endfor %}

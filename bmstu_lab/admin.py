@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Accommodation
-from .models import Guest
-from .models import Booking
+from .models import cars
+from .models import tx
+from .models import user
 
-admin.site.register(Accommodation)
-admin.site.register(Guest)
-admin.site.register(Booking)
+admin.site.register(cars)
+admin.site.register(tx)
+admin.site.register(user)
 
 
 

@@ -2,33 +2,36 @@ from django.db import models
 
 # Create your models here.
 
-class Accommodation(models.Model):
-    acc_name = models.CharField(max_length=50)
-    location = models.CharField(max_length=50)
-    description = models.CharField(max_length=255)
-    price = models.CharField(max_length=30)
-    contacts = models.CharField(max_length=30)
+class cars(models.Model):
+    id = models.IntegerField(primary_key=True)
+    car = models.CharField(max_length=30)
+    dicription = models.CharField(max_length=255)
+
 
     class Meta:
         managed = False
-        db_table = 'accommodation'
+        db_table = 'cars'
 
-class Guest(models.Model):
-    guest_name = models.CharField(max_length=50)
-    city = models.CharField(max_length=30)
-    country = models.CharField(max_length=30)
-    email = models.CharField(max_length=30)
+class tx(models.Model):
+    id_TX = models.IntegerField(primary_key=True)
+    avto = models.CharField(max_length=30)
+    power = models.CharField(max_length=30)
+    drive_unit = models.CharField(max_length=30)
+    max_speed = models.CharField(max_length=30)
+    acceleration = models.CharField(max_length=30)
+
+
+    class Meta:
+        managed = False
+        db_table = 'tx'
+
+class user(models.Model):
+    id_user = models.IntegerField(primary_key=True)
+    FIO = models.CharField(max_length=30)
+    birthday = models.CharField(max_length=30)
     phone = models.CharField(max_length=30)
+    e_mail = models.CharField(max_length=30)
 
     class Meta:
         managed = False
-        db_table = 'guests'
-
-class Booking(models.Model):
-    guest_id = models.IntegerField()
-    accommodation_id = models.IntegerField()
-    dates = models.CharField(max_length=30)
-
-    class Meta:
-        managed = False
-        db_table = 'bookings'
+        db_table = 'user'

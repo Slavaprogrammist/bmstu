@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from datetime import date
-from bmstu_lab.models import Accommodation, Guest, Booking
+from bmstu_lab.models import cars, tx, user
 
 '''def GetData():
          return [
@@ -83,38 +83,38 @@ def GetOrder(request, id):
         'id': id
     }})
 
-def accommodationList(request):
-    return render(request, 'accommodations.html', {'data' : {
+def carList(request):
+    return render(request, 'cars.html', {'data' : {
         'current_date': date.today(),
-        'accommodations': Accommodation.objects.all()
+        'cars': cars.objects.all()
     }})
 
-def GetAccommodation(request, id):
-    return render(request, 'accommodation.html', {'data' : {
+def Getcars(request, id):
+    return render(request, 'car.html', {'data' : {
         'current_date': date.today(),
-        'accommodation': Accommodation.objects.filter(id=id)[0]
+        'car': cars.objects.filter(id=id)[0]
     }})
 
-def AllGuests(request):
-    return render(request, 'guests.html', {'data' : {
+def Alltx(request):
+    return render(request, 'tx.html', {'data' : {
         'current_date': date.today(),
-        'guests': Guest.objects.all()
+        'tx': tx.objects.all()
     }})
 
-def GetGuest(request, id):
-    return render(request, 'guest.html', {'data' : {
+def Gettx(request, id):
+    return render(request, 'tx.html', {'data' : {
         'current_date': date.today(),
-        'guest': Guest.objects.filter(id=id)[0]
+        'tx': tx.objects.filter(id=id)[0]
     }})
 
-def bookingList(request):
-    return render(request, 'bookings.html', {'data' : {
+def userList(request):
+    return render(request, 'user.html', {'data' : {
         'current_date': date.today(),
-        'bookings': Booking.objects.all()
+        'user': user.objects.all()
     }})
 
-def GetBooking(request, id):
-    return render(request, 'booking.html', {'data' : {
+def Getuser(request, id):
+    return render(request, 'user.html', {'data' : {
         'current_date': date.today(),
-        'booking': Booking.objects.filter(id=id)[0]
+        'user': user.objects.filter(id=id)[0]
     }})
