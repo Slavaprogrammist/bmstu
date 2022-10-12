@@ -7,8 +7,3 @@ admin.site.register(cars)
 admin.site.register(tx)
 admin.site.register(user)
 
-
-
-from django.contrib import admin
-
-# Register your models here.

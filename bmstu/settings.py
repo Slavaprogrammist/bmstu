@@ -127,7 +127,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'airbnb_db',
+        'NAME': 'arendaavto',
         'USER': 'dbuser',
         'PASSWORD': '123',
         'HOST': 'localhost',

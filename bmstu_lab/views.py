@@ -3,26 +3,6 @@ from django.shortcuts import render
 from datetime import date
 from bmstu_lab.models import cars, tx, user
 
-'''def GetData():
-         return [
-        {'title': 'Квартира №1', 'id': 1,
-         'description': 'Квартира с видом на море',
-         'bedrooms': '2 спальни',
-         'price': '7500'},
-
-        {'title': 'Квартира №2', 'id': 2,
-         'description': 'Квартира с видом на горе',
-         'bedrooms': '3 спальни',
-         'price': '8000'},
-
-        {'title': 'Квартира №3', 'id': 3,
-         'description': 'Квартира с видом на парк',
-         'bedrooms': '1 спальня',
-         'price': '4500'}
-         ]
-
-'''
-
 def hello(request):
     return HttpResponse('Hello world!')
 
@@ -59,13 +39,6 @@ def GetOrder(request, id):
         'current_date': date.today(),
         'books': Book.objects.all()
     }}) '''
-
-'''def GetBook(request, id):
-    return render(request, 'book.html', {'data' : {
-        'current_date': date.today(),
-        'book': Book.objects.filter(id=id)[0]
-    }}) '''
-
 
 def GetOrders(request):
     return render(request, 'orders.html', {'data': {
