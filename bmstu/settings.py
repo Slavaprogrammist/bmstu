@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bmstu_lab.apps.BmstuLabConfig',
+
+    'rest_framework',
+    'bmstu_lab',
 ]
 
 MIDDLEWARE = [
@@ -77,8 +79,14 @@ WSGI_APPLICATION = 'bmstu.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'arendaavto',
+        'USER': 'dbuser',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': 3306,
+        'OPTIONS': {'charset': 'utf8'},
+        'TEST_CHARSET': 'utf8',
     }
 }
 
@@ -123,16 +131,3 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'arendaavto',
-        'USER': 'dbuser',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
-        'PORT': 3306, # Стандартный порт MySQL
-        'OPTIONS': {'charset': 'utf8'},
-        'TEST_CHARSET': 'utf8',
-    }
-}

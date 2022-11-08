@@ -1,8 +1,31 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from datetime import date
-from bmstu_lab.models import cars, tx, user
 
+from rest_framework import viewsets
+from bmstu_lab.serializers import CarsSerializer, UserSerializer, ArendaSerializer, TxSerializer
+from bmstu_lab.models import Cars, User, Arenda, Tx
+
+
+
+class CarsViewSet(viewsets.ModelViewSet):
+    queryset = Cars.objects.all()
+    serializer_class = CarsSerializer
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+class ArendaViewSet(viewsets.ModelViewSet):
+    queryset = Arenda.objects.all()
+    serializer_class = ArendaSerializer
+
+class TxViewSet(viewsets.ModelViewSet):
+    queryset = Tx.objects.all()
+    serializer_class = TxSerializer
+
+
+"""
 def hello(request):
     return HttpResponse('Hello world!')
 
@@ -18,7 +41,7 @@ def hello(request):
     return render(request, 'index.html', { 'data' : {
         'current_date': date.today(),
         'list': ['python', 'django', 'html']
-    }})
+    }})"""
 
 '''def GetOrders(request):
     return render(request, 'orders.html', {'data' : {
@@ -40,6 +63,7 @@ def GetOrder(request, id):
         'books': Book.objects.all()
     }}) '''
 
+"""
 def GetOrders(request):
     return render(request, 'orders.html', {'data': {
         'current_date': date.today(),
@@ -90,4 +114,4 @@ def Getuser(request, id):
     return render(request, 'user.html', {'data' : {
         'current_date': date.today(),
         'user': user.objects.filter(id=id)[0]
-    }})
+    }})"""
